@@ -1,69 +1,451 @@
 <!DOCTYPE html>
 <html>
-<body>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<title>Resume</title>
+	<style>
+	.bgImage {
+	  filter: blur(6px);
+	  -webkit-filter: blur(6px);
+	  height: 100%; 
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
 
+	/* Position text in the middle of the page/image */
+	.bgText {
+	  font-size:30px;
+	  color: white;
+	  font-weight: bold;
+	  border: 3px solid #f1f1f1;
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  z-index: 2;
+	  width: 80%;
+	  padding: 20px;
+	  text-align: center;
+	}
 
-<form>
-  <h2>Personla Information</h2>
-  <label for="fname">First name:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="lname">Last name:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br>
-  <label for="position">Position</label><br>
-  <input type="text" id="position" name="position" value="Front End Developer"><br>
-  <label for="cNumber">Contact Number:</label><br>
-  <input type="number" id="cNumber" name="cNumber"><br>
-  <label for="email">Email:</label><br>
-  <input type="email" id="email" name="email"><br>
-  <label for="address">Address:</label><br>
-  <input type="text" id="address" name="address"><br>
-  <label for="image">Image:</label><br>
-  <input type="image" id="image" name="image"><br>
-  <h2>Education</h2>
-  <label for="college">College Name:</label><br>
-  <input type="text" id="college" name="college"><br>
-  <label for="cStart">Start:</label><br>
-  <input type="date" id="cStart" name="cStart"><br>
-  <label for="cEnd">End:</label><br>
-  <input type="date" id="cEnd" name="cEnd"><br>
-  ​<label for="degree">Degree:</label><br>
-  <input type="text" id="degree" name="degree"><br>
-  <label for="cgpa">CGPA:</label><br>
-  <input type="number" id="cgpa" name="cgpa"><br>
-  <h2>Interests</h2>
-  <label for="interests">Interests:</label><br>
-  <input type="text" id="interests" name="interests"><br>
-  <h2>Languages</h2>
-  <label for="language">Language/s:</label><br>
-  <input type="text" id="language" name="language"><br>
-  <h2>Skills</h2>
-  <label for="skills">Skills:</label><br>
-  <input type="text" id="skills" name="skills"><br>
-  <h2>Projects</h2>
-  <label for="link">Link:</label><br>
-  <input type="url" id="link" name="link"><br>
-  <label for="description">Description:</label><br>
-  <input type="text" id="description" name="description"><br>
-  <h2>Links</h2>
-  <label for="linkedin">LinkedIn Link:</label><br>
-  <input type="url" id="linkedin" name="linkedin"><br>
-  <label for="github">Github Link:</label><br>
-  <input type="url" id="github" name="github"><br>
-  <h2>Experience</h2>
-  <label for="wpName">Workplace Name:</label><br>
-  <input type="text" id="wpName" name="wpName"><br>
-  <label for="wStart">Start:</label><br>
-  <input type="date" id="wStart" name="wStart"><br>
-  <label for="wEnd">End:</label><br>
-  <input type="date" id="wEnd" name="wEnd"><br>
-  <label for="wpDescription">What did you do:</label><br>
-  <input type="text" id="wpDescription" name="wpDescription"><br>
-  <label for="employer">Employer:</label><br>
-  <input type="text" id="employer" name="employer"><br>
-  <label for="empContact">Contact:</label><br>
-  <input type="number" id="empContact" name="empContact"><br>
-</form>
+	.grid-container {
+	  display: grid;
+	  grid-template-columns: auto auto;
+	  grid-gap: 10px;
+	  padding: 50px;
+	}
 
+	.grid-container > div {
+	  background-color: #D4DBDB;
+	  border: 1px solid black;
+	  text-align: center;
+	  padding: 20px 0;
+	  }
+	.heading{
+		padding:20px;
+		font-family: "Courier New", Courier, monospace;
+		font-size: 32px;
+		color: #45A29E;
+	}
+	.heading:after {
+		text-align:center;
+		content: " ";
+		background-color: #C5C6C7;
+		display: block;
+		width: 2em;
+		height: 9px;
+	}
+	.experienceBox{
+		 background-color: lightgrey;
+		 width: 50%;
+	     border: 1px solid black;
+		 padding: 40px;
+		 text-align: center;
+		 margin:40px;
+		 border-radius: 25px;
+	}
+	.boxShadow{
+		box-shadow: 10px 10px 5px grey;
+	}
+	
+	.skillGrid {
+	  display: grid;
+	  grid-template-columns: auto auto auto auto;
+	  grid-gap: 10px;
+	  padding: 10px;
+	}
 
+	.skillGrid > div {
+	  text-align: center;
+	  font-size: 30px;
+	}
+	
+	.skillButton{
+		background-color: #66FCF1;
+		border: none;
+		color: black;
+		padding: 20px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 4px 2px;
+		cursor: pointer;
+		border-radius: 12px;
+	}
+	.moreInfoImg{
+		width:500px;
+		height:400px;
+	}
+	
+	.card {
+	  background-color: transparent;
+	  width: 500px;
+	  height: 400px;
+	  perspective: 1000px;
+	}
+
+	.card-inner {
+	  position: relative;
+	  width: 100%;
+	  height: 100%;
+	  text-align: center;
+	  transition: transform 0.6s;
+	  transform-style: preserve-3d;
+	  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	}
+
+	.card:hover .card-inner {
+	  transform: rotateY(540deg);
+	}
+
+	.card-front, .card-back {
+	  position: absolute;
+	  width: 100%;
+	  height: 100%;
+	  -webkit-backface-visibility: hidden;
+	  backface-visibility: hidden;
+	}
+
+	.card-front {
+	  background-color: #bbb;
+	  color: black;
+	}
+
+	.card-back {
+	  background-color: #1F2833;
+	  color: white;
+	  transform: rotateY(180deg);
+	}
+	
+	.interestGrid {
+	  display: grid;
+	  grid-template-columns: auto auto auto;
+	  grid-gap: 10px;
+	  background-color: #1F2833;
+	  padding: 10px;
+	}
+
+	.interestGrid > div {
+	  color: #66FCF1;
+	  text-align: center;
+	  font-size: 20px;
+	}
+	
+	.footer
+	{
+	  background-color:#1F2833;
+	  padding:45px 0 20px;
+	  font-size:15px;
+	  line-height:24px;
+	  color:#737373;
+	}
+
+	.footer .social-icons
+	{
+	  text-align:center;
+	}
+	.footer .social-icons a
+	{
+	  width:40px;
+	  height:40px;
+	  line-height:40px;
+	  margin-left:6px;
+	  margin-right:0;
+	  border-radius:100%;
+	  background-color:#33353d;
+	}
+
+	.social-icons
+	{
+	  padding-left:0;
+	  margin-bottom:0;
+	  list-style:none;
+	}
+	.social-icons li
+	{
+	  display:inline-block;
+	  margin-bottom:4px;
+	}
+	.social-icons li.title
+	{
+	  margin-right:15px;
+	  text-transform:uppercase;
+	  color:#96a2b2;
+	  font-weight:700;
+	  font-size:13px;
+	}
+	.social-icons a{
+	  background-color:#eceeef;
+	  color:#818a91;
+	  font-size:16px;
+	  display:inline-block;
+	  line-height:44px;
+	  width:44px;
+	  height:44px;
+	  text-align:center;
+	  margin-right:8px;
+	  border-radius:100%;
+	  -webkit-transition:all .2s linear;
+	  -o-transition:all .2s linear;
+	  transition:all .2s linear;
+	}
+	.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+	{
+	  color:#fff;
+	  background-color:#29aafe;
+	}
+	.social-icons.size-sm a
+	{
+	  line-height:34px;
+	  height:34px;
+	  width:34px;
+	  font-size:14px;
+	}
+	.social-icons a.facebook:hover
+	{
+	  background-color:#3b5998;
+	}
+	.social-icons a.twitter:hover
+	{
+	  background-color:#00aced;
+	}
+	.social-icons a.linkedin:hover
+	{
+	  background-color:#007bb6;
+	}
+	.social-icons a.github:hover
+	{
+	  background-color:#000000;
+	}
+	@media all and (max-width: 600px) {
+	.bgText {
+	  font-size:10px;
+	  color: white;
+	  font-weight: bold;
+	  border: 3px solid #f1f1f1;
+	  position: relative;
+	  top: -60px;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  z-index: 2;
+	  width: 80%;
+	  padding: 20px;
+	  text-align: center;
+	}
+	.grid-container {
+	  display: grid;
+	  grid-template-columns: auto;
+	  grid-gap: 10px;
+	  padding: 10px;
+	}
+	.moreInfoImg{
+		width:99%;
+	}
+	.interestGrid {
+	  display: grid;
+	  grid-template-columns: auto;
+	  grid-gap: 10px;
+	  background-color: #1F2833;
+	  padding: 10px;
+	}
+
+	.interestGrid > div {
+	  color: #66FCF1;
+	  text-align: center;
+	  font-size: 10px;
+	}
+	}
+	</style>
+</head>
+<body style="background-color: #0B0C10">
+	
+	<!--Used Bootstrap for the navigation bar -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <a class="navbar-brand" href="#">SC</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		<div class="navbar-nav">
+		  <a class="nav-item nav-link" href="#experience">Experience</a>
+		  <a class="nav-item nav-link" href="#skills">Skills</a>
+		  <a class="nav-item nav-link" href="#projects">Projects</a>
+		  <a class="nav-item nav-link" href="#moreInfo">More Information</a>
+		  <a class="nav-item nav-link" href="#interests">Interests</a>
+		  
+		</div>
+	  </div>
+	</nav>
+	
+	<!--Cover Photo ->
+	<div style="max-width:100%;height:100%;">
+		<img style="max-width:100%;height:100%;" src="images/4.jpg" alt="Cover Photo">
+	</div>
+	-->
+	<div class="bgImage"><img style="width:100%;" src="images/4.jpg" alt="cover"></div>
+
+	<div class="bgText">
+	  
+	  <p>I am Sadaaf Chowdhury</p>
+	  <p>And I'm a Web Developer</p>
+	</div>
+	
+	<!--Experience -->
+	<div id="experience" class="heading"><h1><b>Experiences</b></h1>
+	</div>
+	<div class="grid-container">
+	  
+		<div class="experienceBox boxShadow">
+		<p style="font-size:15px;"><b>Senoark, Dhaka — Software Engineer(Intern)</b></p>
+		<p style="font-size:11px;">October 2019 - January 2020</p>
+		<p style="font-size:13px;">Worked as a software engineer intern there. I made websites using WordPress. I edited and fixed their existing websites. I was associated 
+		with the design of their LegalX mobile application.</p>
+		<p style="font-size:13px;">Contact:</p>
+		<p style="font-size:13px;">Muiz Shahabuddin</p>
+		<p style="font-size:13px;">-</p>
+		<p style="font-size:13px;">01879836150</p>
+		</div>
+	  
+		<div class="experienceBox boxShadow">
+		<p style="font-size:15px;"><b>Morangesoft, Peru — Software Engineer(Entry)</b></p>
+		<p style="font-size:11px;">May 2020 - </p>
+		<p style="font-size:13px;">Worked as a software engineer there. I made websites using HTML5, CSS3, Javascript, Bootstrap and PHP. I edited and fixed their existing 
+		websites. I was associated with the outside projects they received.</p>
+		<p style="font-size:13px;">Contact:</p>
+		<p style="font-size:13px;">Mikhail Quesada</p>
+		<p style="font-size:13px;">-</p>
+		<p style="font-size:13px;">mq@morangesoft.com</p>
+		</div>
+	  
+	</div>
+	
+	<!--Skills -->
+	
+	<h1 id="skills" class="heading"><b>Skills</b></h1>
+	
+	<div class="skillGrid">
+	  <div><button class="skillButton">Html5</button></div>
+	  <div><button class="skillButton">Java</button></div>
+	  <div><button class="skillButton">Javascript</button></div> 
+	  <div><button class="skillButton">JQuery</button></div> 
+	  <div><button class="skillButton">React</button></div>
+	  <div><button class="skillButton">CSS3</button></div>
+	  <div><button class="skillButton">Bootstrap4</button></div>
+	  <div><button class="skillButton">C</button></div>
+	  <div><button class="skillButton">Git</button></div> 
+	  <div><button class="skillButton">WordPress</button></div>
+	  <div><button class="skillButton">Wix</button></div>
+	  </div>
+	
+	<!--Projects-->
+	
+	<h1 id="projects" class="heading"><b>Projects</b></h1>
+	
+	<div class="interestGrid">
+	  <div>
+		<p><a href="https://sadaafchowdhury.github.io/resume/">https://sadaafchowdhury.github.io/resume/</a></p>
+		<p>Made using Html5, CSS3, Bootsrtap4, Jquery and JavaScript.</p>
+	  </div>
+	  <div>
+		<p><a href="https://github.com/SadaafChowdhury/cse482">https://github.com/SadaafChowdhury/cse482</a></p>
+		<p>Made using Html5, CSS3, JavaScript, php and MySQL. Made it for a course as a team. I was in charge of the front-end part. It is a website on an online grocery delivery system.</p>
+	  </div>
+	  <div>
+		<p><a href="https://bitbucket.org/nabeel_mohammed/fall2019.cse327.9.t4/">https://bitbucket.org/nabeel_mohammed/fall2019.cse327.9.t4/</a></p>
+		<p>Made using Django. Made it for a project in a course. It is a website on an online shop for furniture.</p>
+	  </div>  
+	  <div>
+		<p><a href="https://github.com/SadaafChowdhury/zoomv">https://github.com/SadaafChowdhury/zoomv</a></p>
+		<p>Made using WordPress. Made it for the company I was working at. It is a website for renting virtual addresses for businesses.</p>
+	  </div>
+	</div>
+	
+	<!--About me-->
+	
+	<h1 id="moreInfo"class="heading"><b>More Information</b></h1>
+	
+	<div style="text-align:center;">
+	<div class="card">
+	  <div class="card-inner">
+		<div class="card-front">
+		  <img class="moreInfoImg" src="https://scontent.fdac15-1.fna.fbcdn.net/v/t1.0-9/s960x960/67548201_1710859412391975_7691988240441540608_o.jpg?_nc_cat=106&_nc_sid=7aed08&_nc_eui2=AeEj3vXmWTSuZIbPtyfyvGV3W7ohwoAt9p9buiHCgC32nwpNdm5UzrPhyXmYiW7aT_0_BiU6OPBVCRaKUoGhtwiN&_nc_ohc=bqEeV_x2b1sAX83KgbG&_nc_ht=scontent.fdac15-1.fna&_nc_tp=7&oh=0284655cfccc097015f9eea89632adc1&oe=5F0E4261" alt="Avatar">
+		</div>
+		<div class="card-back">
+		  <h1>Sadaaf Chowdhury</h1> 
+		  <p>Junior Front End Developer</p> 
+		  <p>c.sadaaf@gmail.com</p>
+		  <p>North South University</p>
+		  <p>BSCSE</p>
+		  <p>September, 2016 - September, 2020</p>
+		  <p>Fast Learner</p>
+		</div>
+	  </div>
+	</div>
+	</div>
+	
+	<!--Interests -->
+	
+	<h1 id="interests" class="heading"><b>Interests</b></h1>
+	
+	<div class="interestGrid">
+	  <div><img src="images/i1.jpg" alt="Problem Solving"></div>
+	  <div><img src="images/i2.jpg" alt="Gaming"></div>
+	  <div><img src="images/i3.jpg" alt="Travelling"></div>  
+	</div>
+	<div class="interestGrid">
+	  <div>Problem Solving</div>
+	  <div>Gaming</div>
+	  <div>Travelling</div>  
+	</div>
+	<br><br>
+  <!-- Footer -->
+    <footer class="footer">
+          <div>
+            <ul class="social-icons">
+              <li><a class="facebook" href="https://www.facebook.com/sadaaf.chowdhury.5"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="https://twitter.com/SadaafC"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="github" href="https://github.com/SadaafChowdhury"><i class="fa fa-github"></i></a></li>
+              <li><a class="linkedin" href="https://bd.linkedin.com/in/sadaaf-chowdhury-110aa3195"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div>
+    </footer>
+	<script>
+		$(document).ready(function(){
+		  $(".skillButton").hover(function(){
+			$(this).toggle("slow");
+		  });
+		});
+	</script>
 </body>
 </html>
