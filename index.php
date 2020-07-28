@@ -18,7 +18,7 @@
 <div class="grid-container">
 
 <div>
-<form action="resume.html" method="post">
+<form action="resume.php" method="post">
   <h1>Personal Information</h1>
   <label for="fname">First name:</label>
   <input class="inputFields" type="text" id="fname" name="fname" value="John">
