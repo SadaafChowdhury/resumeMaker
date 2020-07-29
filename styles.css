@@ -37,7 +37,6 @@
   grid-template-areas:
     'left right right';
   grid-gap: 10px;
-  background-color: #0091B2;
   padding: 10px;
 }
 
@@ -59,4 +58,8 @@
 
 .grid-container2 > div {
   padding: 20px 0;
+}
+
+.theme{
+	background-color: red;
 }
